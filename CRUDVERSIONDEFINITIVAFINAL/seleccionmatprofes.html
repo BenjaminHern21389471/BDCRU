@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Materias</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Registro de materias</h2>
+    <form id="materiasForm">
+        <div class="form-group">
+            <label for="materiasSelect">Materias:</label>
+            <select multiple class="form-control" id="materiasSelect">
+                <!-- carga de materias -->
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+    <h3 class="mt-5">Materias seleccionadas</h3>
+    <div class="table-responsive">
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>Materia</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="materiasSeleccionadas">
+                <!-- muestra las materias que se seleccionen de la tabla, las guarda y las muestra en esta tabla -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+<script src="firebase.js"></script>
+<script src="Matprofes.js"></script>
+</body>
+</html>

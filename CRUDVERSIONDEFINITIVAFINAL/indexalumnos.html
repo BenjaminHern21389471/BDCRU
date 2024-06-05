@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>REGISTRO</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="diseño.css">
+</head>
+<body>
+<div class="container-xl d-flex justify-content-center align-items-center p-5">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Registro Academico <b>Alumnos</b></h2>
+                </div>
+                <div class="col-sm-6">
+                    <a href="#addAlumnoModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Añadir</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="searchField" placeholder="Buscar por Nombre o Matrícula">
+            </div>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Matrícula</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <!-- Aquí se insertan las filas de estudiantes -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Añadir -->
+<div id="addAlumnoModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Añadir alumno</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control addNombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo</label>
+                        <input type="email" class="form-control addCorreo" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                    <input type="submit" class="btn btn-success addData" value="Añadir">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Editar -->
+<div id="editAlumnoModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Editar</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control editNombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo</label>
+                        <input type="email" class="form-control editCorreo" required>
+                    </div>
+                    <input type="hidden" class="editIdMatricula">
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                    <input type="submit" class="btn btn-info updateAlumno" value="Guardar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- BORRAR -->
+<div id="deleteAlumnoModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Eliminar Alumno</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Deseas eliminar el registro?</p>
+                    <p class="text-warning"><small>No se podrá deshacer esta acción.</small></p>
+                    <input type="hidden" class="deleteIdMatricula">
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                    <input type="submit" class="btn btn-danger deleteAlumno" value="Borrar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+<script src="firebase.js"></script>
+<script src="funciones.js"></script>
+</body>
+</html>
